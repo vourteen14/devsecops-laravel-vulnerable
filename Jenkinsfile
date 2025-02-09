@@ -42,6 +42,36 @@ pipeline {
             }
         }
 
+        stage('Start Container') {
+            steps {
+                script {
+                    sh """
+                    docker run -d --name devpsecops-vuln-laravel \\
+                        -v \$(pwd)/database/database.sqlite:/app/database/database.sqlite \\
+                        -e DB_CONNECTION=sqlite \\
+                        -e DB_DATABASE=/app/database/database.sqlite \\
+                        vourteen14/devpsecops-vuln-laravel:latest
+                    """
+                }
+            }
+        }
+
+        stage('Run Migrate') {
+            steps {
+                script {
+                    sh "docker exec devpsecops-vuln-laravel php artisan migrate  --force"
+                }
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                script {
+                    sh "docker exec devpsecops-vuln-laravel php artisan test"
+                }
+            }
+        }
+
         stage('Push docker') {
             steps {
                 script {
