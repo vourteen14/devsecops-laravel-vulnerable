@@ -62,8 +62,15 @@ pipeline {
         stage('Run Tests') {
             steps {
                 script {
-                    sh "docker exec devpsecops-vuln-laravel php artisan test"
+                    sh "docker exec devpsecops-vuln-laravel mkdir -p tests/_output"
+                    sh "docker exec devpsecops-vuln-laravel vendor/bin/phpunit --log-junit tests/_output/junit.xml"
                 }
+            }
+        }
+    
+        stage('Publish Test Results') {
+            steps {
+                junit '**/tests/_output/junit.xml'
             }
         }
 
