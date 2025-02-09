@@ -53,6 +53,7 @@ pipeline {
         stage('Run Migrate') {
             steps {
                 script {
+                    sh "docker exec devpsecops-vuln-laravel touch /tmp/database.sqlite"
                     sh "docker exec devpsecops-vuln-laravel php artisan migrate  --force"
                 }
             }
@@ -71,6 +72,15 @@ pipeline {
                 script {
                     sh "docker push vourteen14/devpsecops-vuln-laravel:latest"
                 }
+            }
+        }
+    }
+    post {
+        always {
+            script {
+                sh "docker stop devpsecops-vuln-laravel || true"
+                sh "docker rm devpsecops-vuln-laravel || true"
+                sh "docker rmi vourteen14/devpsecops-vuln-laravel:latest || true"
             }
         }
     }
