@@ -1,0 +1,6 @@
+projectKey=devsecops-pipeline-testing
+serverUrl=https://snr.angga-sr.xyz
+serverVersion=10.5.1.90531
+dashboardUrl=https://snr.angga-sr.xyz/dashboard?id=devsecops-pipeline-testing
+ceTaskId=3330a167-cd3f-40b4-952c-f181b319d929
+ceTaskUrl=https://snr.angga-sr.xyz/api/ce/task?id=3330a167-cd3f-40b4-952c-f181b319d929
