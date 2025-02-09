@@ -5,8 +5,9 @@ RUN a2enmod rewrite
 RUN apt-get update && apt-get install -y \
     libpng-dev libjpeg-dev libfreetype6-dev \
     libonig-dev libzip-dev unzip mariadb-client \
+    sqlite3 libsqlite3-dev \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install gd pdo pdo_mysql zip pdo_sqlite sqlite3
+    && docker-php-ext-install gd pdo pdo_mysql zip pdo_sqlite
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
