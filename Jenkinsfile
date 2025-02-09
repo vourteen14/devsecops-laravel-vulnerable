@@ -45,7 +45,7 @@ pipeline {
         stage('Start Container') {
             steps {
                 script {
-                    sh "docker run -d --name devpsecops-vuln-laravel -e DB_CONNECTION=sqlite -e DB_DATABASE=/tmp/database.sqlite vourteen14/devpsecops-vuln-laravel:latest"
+                    sh "docker run -d --name devpsecops-vuln-laravel -e APP_KEY=base64:kwv+Q5o4HYkcVPaYM/x1JTdWrZ0w11rRe0NoQFjVx1o= -e DB_CONNECTION=sqlite -e DB_DATABASE=/tmp/database.sqlite vourteen14/devpsecops-vuln-laravel:latest"
                 }
             }
         }
