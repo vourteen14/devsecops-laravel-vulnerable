@@ -37,8 +37,7 @@ pipeline {
         stage('Build and push') {
             steps {
                 script {
-                    sh "docker buildx build -t ${IMAGE_NAME}:latest --push .
-"
+                    sh "docker buildx build -t ${IMAGE_NAME}:latest --push ."
                 }
             }
         }
