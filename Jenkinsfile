@@ -2,10 +2,11 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "devpsecops-vuln-laravel"
+        IMAGE_NAME = "vourteen14/devpsecops-vuln-laravel"
         CONTAINER_NAME = "devpsecops-vuln-laravel"
         SONAR_SCANNER_PATH = "/opt/sonar-scanner/bin"
         PATH = "${SONAR_SCANNER_PATH}:$PATH"
+        DOCKER_PASSWORD = credentials('DOCKER_PASSWORD')
     }
 
     stages {
@@ -13,6 +14,14 @@ pipeline {
             steps {
                 script {
                     checkout scm
+                }
+            }
+        }
+
+        stage('Docker login') {
+            steps {
+                script {
+                    sh 'echo ${DOCKER_PASSWORD} | docker login -u my_username --password-stdin'
                 }
             }
         }
@@ -25,10 +34,11 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Build and push') {
             steps {
                 script {
-                    sh "docker build -t ${IMAGE_NAME}:latest ."
+                    sh "docker buildx build -t ${IMAGE_NAME}:latest --push .
+"
                 }
             }
         }
