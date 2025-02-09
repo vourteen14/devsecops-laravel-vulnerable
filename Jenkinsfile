@@ -34,10 +34,18 @@ pipeline {
             }
         }
 
-        stage('Build and push') {
+        stage('Build docker') {
             steps {
                 script {
-                    sh "docker buildx build -t vourteen14/devpsecops-vuln-laravel:latest --push ."
+                    sh "docker build -t vourteen14/devpsecops-vuln-laravel:latest ."
+                }
+            }
+        }
+
+        stage('Push docker') {
+            steps {
+                script {
+                    sh "docker push vourteen14/devpsecops-vuln-laravel:latest"
                 }
             }
         }
