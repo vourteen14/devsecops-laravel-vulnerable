@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="" tests="9" assertions="17" errors="0" warnings="0" failures="0" skipped="0" time="0.515392">
+    <testsuite name="Unit" tests="3" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.296745">
+      <testsuite name="Tests\Unit\UserTest" file="/home/vourteen14/workspace/devsecops-pipeline/tests/Unit/UserTest.php" tests="3" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.296745">
+        <testcase name="it_can_create_a_user" class="Tests\Unit\UserTest" classname="Tests.Unit.UserTest" file="/home/vourteen14/workspace/devsecops-pipeline/tests/Unit/UserTest.php" line="15" assertions="2" time="0.244967"/>
+        <testcase name="it_requires_unique_email" class="Tests\Unit\UserTest" classname="Tests.Unit.UserTest" file="/home/vourteen14/workspace/devsecops-pipeline/tests/Unit/UserTest.php" line="28" assertions="1" time="0.026298"/>
+        <testcase name="it_can_delete_a_user" class="Tests\Unit\UserTest" classname="Tests.Unit.UserTest" file="/home/vourteen14/workspace/devsecops-pipeline/tests/Unit/UserTest.php" line="38" assertions="1" time="0.025480"/>
+      </testsuite>
+    </testsuite>
+    <testsuite name="Feature" tests="6" assertions="13" errors="0" warnings="0" failures="0" skipped="0" time="0.218647">
+      <testsuite name="Tests\Feature\AuthTest" file="/home/vourteen14/workspace/devsecops-pipeline/tests/Feature/AuthTest.php" tests="3" assertions="9" errors="0" warnings="0" failures="0" skipped="0" time="0.136213">
+        <testcase name="it_registers_a_new_user" class="Tests\Feature\AuthTest" classname="Tests.Feature.AuthTest" file="/home/vourteen14/workspace/devsecops-pipeline/tests/Feature/AuthTest.php" line="14" assertions="2" time="0.066611"/>
+        <testcase name="it_requires_valid_email_for_registration" class="Tests\Feature\AuthTest" classname="Tests.Feature.AuthTest" file="/home/vourteen14/workspace/devsecops-pipeline/tests/Feature/AuthTest.php" line="28" assertions="3" time="0.030003"/>
+        <testcase name="it_logs_in_a_user" class="Tests\Feature\AuthTest" classname="Tests.Feature.AuthTest" file="/home/vourteen14/workspace/devsecops-pipeline/tests/Feature/AuthTest.php" line="42" assertions="4" time="0.039599"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\SecurityTest" file="/home/vourteen14/workspace/devsecops-pipeline/tests/Feature/SecurityTest.php" tests="3" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.082434">
+        <testcase name="guests_cannot_access_dashboard" class="Tests\Feature\SecurityTest" classname="Tests.Feature.SecurityTest" file="/home/vourteen14/workspace/devsecops-pipeline/tests/Feature/SecurityTest.php" line="14" assertions="2" time="0.027339"/>
+        <testcase name="authenticated_users_can_access_dashboard" class="Tests\Feature\SecurityTest" classname="Tests.Feature.SecurityTest" file="/home/vourteen14/workspace/devsecops-pipeline/tests/Feature/SecurityTest.php" line="21" assertions="1" time="0.029573"/>
+        <testcase name="csrf_protection_is_enabled" class="Tests\Feature\SecurityTest" classname="Tests.Feature.SecurityTest" file="/home/vourteen14/workspace/devsecops-pipeline/tests/Feature/SecurityTest.php" line="29" assertions="1" time="0.025521"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>

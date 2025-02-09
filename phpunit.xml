@@ -3,17 +3,14 @@
          xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd"
          bootstrap="vendor/autoload.php"
          colors="true"
-         backupGlobals="false"
-         backupStaticGlobals="false"
-         colors="true"
          verbose="true">
->
     <testsuites>
         <testsuite name="Unit">
-            <directory suffix="Test.php">./tests/Unit</directory>
+            <directory suffix="UserTest.php">./tests/Unit</directory>
         </testsuite>
         <testsuite name="Feature">
-            <directory suffix="Test.php">./tests/Feature</directory>
+            <directory suffix="AuthTest.php">./tests/Feature</directory>
+            <directory suffix="SecurityTest.php">./tests/Feature</directory>
         </testsuite>
     </testsuites>
     <coverage processUncoveredFiles="true">
@@ -32,7 +29,4 @@
         <server name="SESSION_DRIVER" value="array"/>
         <server name="TELESCOPE_ENABLED" value="false"/>
     </php>
-    <logging>
-        <log type="JUnit" target="tests/_output/junit.xml"/>
-    </logging>
 </phpunit>
