@@ -54,7 +54,7 @@ pipeline {
             steps {
                 script {
                     sh "docker exec devpsecops-vuln-laravel touch /tmp/database.sqlite"
-                    sh "docker exec devpsecops-vuln-laravel php artisan migrate  --force"
+                    sh "docker exec devpsecops-vuln-laravel php artisan migrate --force"
                 }
             }
         }
