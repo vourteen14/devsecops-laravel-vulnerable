@@ -37,7 +37,7 @@ pipeline {
         stage('Build and push') {
             steps {
                 script {
-                    sh "docker buildx build --tag vourteen14/devpsecops-vuln-laravel:latest --push ."
+                    sh "docker buildx build -t vourteen14/devpsecops-vuln-laravel:latest --push ."
                 }
             }
         }
