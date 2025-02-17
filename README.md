@@ -1,4 +1,4 @@
-# THIS IS VULNERABLE APPLICATION #
+# THIS IS VULNERABLE APPLICATION
 
 This application vulnerable for:
 - SQL Injection
