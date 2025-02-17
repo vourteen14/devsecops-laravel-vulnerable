@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: .
+    image: devsecops-pipeline:develop
+    ports:
+      - 7289:80
+    environment:
+      - APP_ENV=local
+      - LOG_CHANNEL=errorlog
+      - APP_KEY=base64:kwv+Q5o4HYkcVPaYM/x1JTdWrZ0w11rRe0NoQFjVx1o=
+      - DB_CONNECTION=mysql
+      - DB_HOST=172.69.0.75
+      - DB_PORT=3306
+      - DB_DATABASE=laravel_dev_db
+      - DB_USERNAME=laravel_dev_user
+      - DB_PASSWORD=CdDDdfafafa923
